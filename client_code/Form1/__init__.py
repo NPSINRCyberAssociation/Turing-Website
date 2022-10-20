@@ -26,6 +26,8 @@ class Form1(Form1Template):
         time = datetime.fromtimestamp(remaining_time)
         if remaining_time > 3600 * 3:
             self.time_remaining.text = '03:00'
+        elif remaining_time < 0:
+            self.time_remaining.text = '00:00'
         else:
             self.time_remaining.text = time.strftime('%M:%S' if remaining_time < 3600 else '%H:%M')
         self.timer_1.interval = 0 if remaining_time <= 0 else 1
