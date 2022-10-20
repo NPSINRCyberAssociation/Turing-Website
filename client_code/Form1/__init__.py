@@ -22,8 +22,8 @@ class Form1(Form1Template):
 
     def timer_1_tick(self, **event_args):
         '''This method is called Every [interval] seconds. Does not trigger if [interval] is 0.'''
-        remaining_time = (self.end_time - datetime.now()).total_seconds()
-        time = datetime.fromtimestamp(remaining_time) - 19800
+        remaining_time = (self.end_time - datetime.now()).total_seconds() - 19800
+        time = datetime.fromtimestamp(remaining_time)
         if remaining_time > 3600 * 3:
             self.time_remaining.text = '00:00'
         else:
