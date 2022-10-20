@@ -13,7 +13,7 @@ class Form1(Form1Template):
 
         # Any code you write here will run when the form opens.
         self.leaderboard_list.items = anvil.server.call('get_leaderboard')
-        self.total_flags = 50
+        self.total_flags = 35
         self.flags_left.text = self.total_flags
 
         # Initialize timer
