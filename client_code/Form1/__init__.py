@@ -24,7 +24,7 @@ class Form1(Form1Template):
         '''This method is called Every [interval] seconds. Does not trigger if [interval] is 0.'''
         remaining_time = (self.end_time - datetime.now()).total_seconds() - 19800
         time = datetime.fromtimestamp(remaining_time)
-		if remaining_time > 3600 * 3:
+        if remaining_time > 3600 * 3:
             self.time_remaining.text = '03:00'
         else:
             self.time_remaining.text = time.strftime('%M:%S' if remaining_time < 3600 else '%H:%M')
