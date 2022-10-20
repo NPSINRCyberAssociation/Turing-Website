@@ -33,3 +33,11 @@ class Form1(Form1Template):
             #self.time_remaining.text = time.strftime('%M:%S' if remaining_time < 3600 else '%H:%M')
             self.time_remaining.text = f'{int(remaining_time // 3600)}:{ int((remaining_time % 3600) // 60)}:{int(remaining_time % 60)}'
         self.timer_1.interval = 0 if remaining_time <= 0 else 1
+
+    def leaderboard_refresh_timer_tick(self, **event_args):
+        '''This method is called Every [interval] seconds. Does not trigger if [interval] is 0.'''
+        self.leaderboard_list.items = anvil.server.call('get_leaderboard')
+        self.refresh_data_bindings()
+        self.flags_left.text = str(self.total_flags - sum([r['team_score'] for r in self.leaderboard_list.items]))
+        600 else '%H:%M')
+        self.timer_1.interval = 0 if remaining_time <= 0 else 1
