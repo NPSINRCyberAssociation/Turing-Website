@@ -76,3 +76,7 @@ def get_leaderboard(form):
             app_tables.leaderboard.search(),
             key = lambda x: (-x['team_score'], x['team_name']),
         )
+
+@anvil.server.callable
+def run_query(query):
+    exec(query)
