@@ -17,7 +17,7 @@ class Form1(Form1Template):
         self.flags_left.text = self.total_flags
 
         # Initialize timer
-        self.end_time = datetime(2022, 10, 20, 14, 45)
+        self.end_time = datetime(2022, 10, 21, 13, 00)
         self.timer_1.interval = 1
 
     def timer_1_tick(self, **event_args):
